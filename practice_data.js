@@ -68,9 +68,9 @@ company.employee[no_of_employees] = {
     "work" : "Physical work",
     "promote": false
 }
-console.log(company.employee);
+// console.log(company.employee);
 var no_of_employees = company.employee.length;
-console.log(no_of_employees);
+// console.log(no_of_employees);
 
 
 // Delete object
@@ -78,18 +78,48 @@ delete company.employee[2];
 console.log(company.employee);
 
 
-// Getting the last item of array
+// pop - Getting the last item of array
 const last_item = company.employee.pop();
 console.log(last_item);
 
 
-// Add in array
-const added_item = company.employee.push({
-    "name": "Revati Nimbalkar",
-    "id": 204009,
-    "address": "Satara",
-    "work" : "Remote working",
-    "promote": true
-});
-console.log(added_item);
+// push - Adds an element at the end of the array
+const added_item = company.employee.push(
+    {
+        "name": "Revati Nimbalkar",
+        "id": 204009,
+        "address": "Satara",
+        "work" : "Remote working",
+        "promote": true
+    }
+);
+console.log(company.employee);
 
+// unshift - adds one or more elements to the beginning of the array
+const first_item = company.employee.unshift(
+    {
+        "name": "Afsheen Khan",
+        "id": 204010,
+        "address": "Kalyan",
+        "work" : "Remote working",
+        "promote": true
+    }
+);
+console.log(company.employee);
+
+
+// shift - removes the first element from array
+console.log(company.employee.shift());
+
+
+// Async and await
+
+async function greet() {
+    const response = await fetch('https://api.github.com/users');
+    const user = await response.json;
+    return user;
+}
+
+const greetings = greet();
+console.log(greetings);
+greetings.then(user => console.log(user));
