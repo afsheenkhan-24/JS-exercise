@@ -115,7 +115,7 @@ console.log(company.employee.shift());
 // Async and await
 
 async function greet() {
-    const response = await fetch('https://api.github.com/users');
+    const response = await fetch("https://api.github.com/users");
     const user = await response.json;
     return user;
 }
